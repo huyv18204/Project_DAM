@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../fontawesome-free-6.4.0-web/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container-admin {
+            display: flex;
+            justify-content: flex-start;
+            height: 815px;
+            background-color: #f5f5f5;
+
+        }
+
+        .col-1-admin {
+            width: 300px;
+            background-color: #212529;
+            height: 815px;
+        }
+
+        .information-admin {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .line-admin {
+            width: 80%;
+            /* Độ dài của đường thẳng */
+            height: 0.5px;
+            /* Độ dày của đường thẳng */
+            background-color: #d3d3d3;
+            /* Màu sắc của đường thẳng */
+            display: inline-block;
+            margin: 0 20px 10px 20px;
+            /* Khoảng cách giữa đường thẳng và tiêu đề */
+            vertical-align: middle;
+            /* Để đường thẳng nằm giữa tiêu đề */
+            margin-top: 30px;
+        }
+
+        .information-admin>img {
+            width: 70px;
+            border-radius: 100px;
+        }
+
+        .information-admin>h3 {
+            color: white;
+            margin-top: 15px;
+        }
+
+        .function-admin ul {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .function-admin li {
+            list-style: none;
+            width: 210px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 25px 0 25px 0;
+            border-radius: 5px;
+            margin: 8px;
+
+        }
+
+        .function-admin li:hover {
+            background-color: #ffd43b;
+        }
+
+        .function-admin li:hover a {
+            color: #161648;
+        }
+
+        .function-admin a {
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+            margin-left: 30px;
+
+        }
+
+        .col-2-admin {
+            width: 100%;
+            overflow-y: auto;
+        }
+
+        .logout-container {
+            width: 100%;
+            background-color: #212529;
+            height: 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .logout {
+            margin-right: 80px;
+            border: none;
+            background-color: #ffd43b;
+            height: 30px;
+            width: 80px;
+            border-radius: 3px;
+            color: black;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .commodities-container {
+            background-color: #ffffff;
+            margin: 0 30px 30px 30px;
+        }
+
+        .function-commodities>button {
+            height: 35px;
+            width: auto;
+            margin: 25px 0 0 25px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .function-commodities a {
+            text-decoration: none;
+            padding: 10px;
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+
+        }
+
+        .add-commodities {
+            background-color: #9df99d;
+        }
+
+        .select-all-commodities {
+            background-color: #bfbeef;
+        }
+
+        .unchecker-commodities {
+            background-color: #e1ec68;
+        }
+
+        .delete-all-commodities {
+            background-color: #efc9ca;
+        }
+
+        .table-commodities {
+            margin: 20px 30px 20px 30px;
+        }
+
+        .commodities {
+            width: 100%;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            /* Đảm bảo bảng chiếm toàn bộ chiều rộng của container */
+            border-collapse: collapse;
+            /* Gộp các đường viền của ô */
+        }
+
+        th,
+        td {
+            text-align: center;
+            /* Căn giữa theo chiều ngang */
+            vertical-align: middle;
+            /* Căn giữa theo chiều dọc */
+            padding: 10px;
+            /* Khoảng cách lề bên trong của ô */
+            border: 1px solid #ccc;
+            /* Đường viền ô */
+        }
+
+        .line-commodities {
+            width: 94%;
+            /* Độ dài của đường thẳng */
+            height: 0.5px;
+            /* Độ dày của đường thẳng */
+            background-color: #d3d3d3;
+            /* Màu sắc của đường thẳng */
+            display: inline-block;
+            margin: 0 20px 10px 20px;
+            /* Khoảng cách giữa đường thẳng và tiêu đề */
+            vertical-align: middle;
+            /* Để đường thẳng nằm giữa tiêu đề */
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        #pagination {
+            text-align: right;
+            margin-top: 20px;
+            height: 30px;
+        }
+
+        #pagination a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        #pagination a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        #pagination .active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .commodities-title {
+            height: 30px;
+            background-color: #ffffff;
+            margin: 30px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .commodities-title>h4 {
+            margin-left: 25px;
+        }
+
+        .active {
+            color: #161648;
+            background-color: #ffd43b;
+        }
+
+        .active a {
+            color: #161648;
+        }
+
+        td>button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .fa-trash-alt {
+            color: #de0400;
+        }
+
+        .delete {
+            background-color: #F7C3C2;
+        }
+
+        .fa-edit {
+            color: #f49da3;
+        }
+
+        .edit {
+            background-color: #FBd2c5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logout-container">
+        <form action="">
+            <button class="logout" type="submit">Đăng Xuất</button>
+        </form>
+    </div>
+    <div class="container-admin">
+        <div class="col-1-admin">
+            <div class="information-admin">
+                <img src="image/User.png" alt="">
+                <h3>Quốc Huy</h3>
+                <div class="line-admin"></div>
+            </div>
+            <div class="function-admin">
+                <ul>
+                    <li class="active"><a href="">Quản lí loại hàng</a></li>
+                    <li><a href="">Quản lí hàng hoá</a></li>
+                    <li><a href="">Quản lí khách hàng</a></li>
+                    <li><a href="">Quản lí bình luận</a></li>
+                    <li><a href="">Quản lí thống kê</a></li>
+                    <li><a href="">Quản lí tài khoản</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-2-admin">
+            <div class="commodities-title">
+                <h4>Danh sách sản phẩm<h4>
+            </div>
+            <div class="commodities-container">
+                <div class="function-commodities">
+                    <button class="add-commodities" type="submit"><a href="">Tạo sản phẩm mới</a></button>
+                    <button class="select-all-commodities" type="submit"><a href="">Chọn tất cả</a></button>
+                    <button class="unchecker-commodities" type="submit"><a href="">Bỏ chọn tất cả</a></button>
+                    <button class="delete-all-commodities" type="submit"><a href="">Xoá tất cả</a></button>
+                </div>
+                <div class="line-commodities"></div>
+                <div class="table-commodities">
+                    <table class="commodities">
+                        <thead>
+                            <tr>
+                                <th width="10"><input type="checkbox"></th>
+                                <th>Mã sản phẩm</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Ảnh</th>
+                                <th>Số lượng</th>
+                                <th>Tình trạng</th>
+                                <th>Giá tiền</th>
+                                <th>Danh mục</th>
+                                <th>Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody class="product-list">
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+
+                            <tr>
+                                <td width="10"><input type="checkbox"></td>
+                                <td>71309005</td>
+                                <td>Bàn ăn gỗ Theresa</td>
+                                <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
+                                <td>40</td>
+                                <td><span class="status">Còn hàng</span></td>
+                                <td>5.600.000 đ</td>
+                                <td>Bàn ăn</td>
+                                <td><button class="delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const productList = document.querySelectorAll('.product-list tr');
+    const itemsPerPage = 8; // Số sản phẩm trên mỗi trang
+    let currentPage = 1; // Trang hiện tại
+
+    // Tạo liên kết phân trang tự động
+    function createPaginationLinks() {
+        const pageCount = Math.ceil(productList.length / itemsPerPage);
+        const paginationDiv = document.getElementById('pagination');
+        paginationDiv.innerHTML = '';
+
+        for (let i = 1; i <= pageCount; i++) {
+            const pageLink = document.createElement('a');
+            pageLink.href = '#';
+            pageLink.textContent = i;
+            paginationDiv.appendChild(pageLink);
+
+            pageLink.addEventListener('click', () => {
+                currentPage = i;
+                showPage(currentPage);
+            });
+        }
+    }
+
+    // Hiển thị sản phẩm trên trang cụ thể
+    function showPage(pageNumber) {
+        const startIndex = (pageNumber - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+
+        productList.forEach((product, index) => {
+            if (index >= startIndex && index < endIndex) {
+                product.style.display = 'table-row';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    // Gọi hàm tạo liên kết phân trang và hiển thị trang ban đầu
+    createPaginationLinks();
+    showPage(currentPage);
+</script>
+
+</html>

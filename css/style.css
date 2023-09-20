@@ -306,6 +306,7 @@
 .benefit {
     height: 110px;
     background-color: #ebebeb;
+    width: 1440px;
 
 }
 
@@ -631,4 +632,97 @@ iframe {
 
 .content-comment {
     margin-left: 10px;
+}
+
+
+
+
+/* ------------------------Product_____ */
+.product-container-main {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 30px;
+    padding-top: 50px;
+    width: 1200px;
+    margin: auto;
+}
+
+.main-product {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.main-product .product {
+    width: 290px;
+}
+
+
+.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.title-product {
+    text-align: center;
+}
+
+.line-product {
+    width: 100%;
+    /* Độ dài của đường thẳng */
+    height: 1.5px;
+    /* Độ dày của đường thẳng */
+    background-color: #d3d3d3;
+    /* Màu sắc của đường thẳng */
+    display: inline-block;
+    margin: 0 20px 10px 20px;
+    /* Khoảng cách giữa đường thẳng và tiêu đề */
+    vertical-align: middle;
+    /* Để đường thẳng nằm giữa tiêu đề */
+}
+
+.title-product-main {
+    display: inline-block;
+    font-size: 30px;
+}
+
+
+.nav-bar-product-menu {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.nav-bar-product-menu li {
+    list-style: none;
+
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-col-2 {
+    background-color: #333333;
+    height: 425px;
+    margin-top: 10px;
+}
+
+
+.nav-bar-product-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.nav-bar-product-menu img {
+    width: 30px;
+    height: 30px;
 }
