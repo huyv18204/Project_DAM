@@ -1,3 +1,35 @@
+<section class="benefit">
+    <div class="row-benefit">
+        <img src="image/icon_benefit_1.png" alt="">
+        <div class="content-benefit">
+            <h4>Mua hàng siêu tiết kiệm</h4>
+            <p>Các sản phẩm luôn được bán với giá ưu đã nhất cho khách hàng</p>
+        </div>
+    </div>
+    <div class="row-benefit">
+        <img src="image/icon_benefit_2.png" alt="">
+        <div class="content-benefit">
+            <h4>Chất lượng tuyệt đối 100%</h4>
+            <p>Cam kết sản phẩm chính hãng từ Châu Âu, Châu Mỹ ...</p>
+        </div>
+    </div>
+    <div class="row-benefit">
+        <img src="image/icon_benefit_3.png" alt="">
+        <div class="content-benefit">
+
+            <h4>Khuyến mại cực lớn</h4>
+            <p>Được hưởng ưu đãi và các chương trình khuyến mại cực lớn</p>
+        </div>
+    </div>
+    <div class="row-benefit">
+        <img src="image/icon_benefit_4.png" alt="">
+        <div class="content-benefit">
+            <h4>Thanh toán dễ dàng</h4>
+            <p>Phương thức thanh toán dễ dàng và cực kì tiện lợi</p>
+        </div>
+    </div>
+</section>
+</main>
 <footer>
     <div></div>
     <div class="main-footer">

@@ -1,617 +1,156 @@
 <section class="main-body">
-            <div class="banner">
+    <div class="banner">
 
-                <div class="slide active">
-                    <a href=""><img src="image/Banner_4.png" alt=""></a>
+        <div class="slide active">
+            <a href=""><img src="image/Banner_4.png" alt=""></a>
+        </div>
+        <div class="slide active">
+            <a href=""><img src="image/Banner_6.jpeg" alt=""></a>
+        </div>
+        <div class="slide active">
+            <a href=""><img src="image/Banner_7.jpeg" alt=""></a>
+        </div>
+        <div class="slide active">
+            <a href=""><img src="image/Banner_8.jpeg" alt=""></a>
+        </div>
+    </div>
+    <main>
+        <section class="main">
+
+            <!-- --------------------- -->
+            <div class="new">
+                <div class="title-container">
+                    <div class="line"></div>
+                    <h1 class="title-main">SẢN PHẨM NỔI BẬT</h1>
+                    <div class="line"></div>
                 </div>
-                <div class="slide active">
-                    <a href=""><img src="image/Banner_6.jpeg" alt=""></a>
-                </div>
-                <div class="slide active">
-                    <a href=""><img src="image/Banner_7.jpeg" alt=""></a>
-                </div>
-                <div class="slide active">
-                    <a href=""><img src="image/Banner_8.jpeg" alt=""></a>
+
+                <div class="product-container">
+                    <div class="row-product">
+                        <?php foreach ($list_sp as $sp_new) {
+                            extract($sp_new);
+                            $path_deltail = 'index.php?act=deltail&id=' . $id_sanpham;
+                            echo '
+                         <div class="product">
+                        <span class="discount">Giảm 16%</span>
+                        <div class="img-product">
+                            <a href="'.$path_deltail.'"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
+                        </div>
+                        <div class="price-product">
+                            <s class="price-old">29,000,000<p>VNĐ</p></s>
+
+                            <div class="price-new">' . $gia . '<p>VNĐ</p>
+                            </div>
+                        </div>
+                        <h4><a href="'.$path_deltail.'">' . $ten_sanpham . '</a></h4>
+                    </div>
+
+                        ';
+                        } ?>
+                    </div>
                 </div>
             </div>
-            <main>
-                <section class="main">
+            <!-- -------------------------------- -->
+            <div class="macbook_air">
+                <div class="title-container">
+                    <div class="line"></div>
+                    <h1 class="title-main">MACBOOK AIR</h1>
+                    <div class="line"></div>
+                </div>
 
-                    <!-- --------------------- -->
-                    <div class="title-container">
-                        <div class="line"></div>
-                        <h1 class="title-main">SẢN PHẨM NỔI BẬT</h1>
-                        <div class="line"></div>
-                    </div>
-
-                    <div class="product-container">
-                        <div class="row-product">
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-
+                <div class="product-container">
+                    <div class="row-product">
+                        <?php foreach ($sp_macbook_air as $macbookair) {
+                            extract($macbookair);
+                            $path_deltail = 'index.php?act=deltail&id=' . $id_sanpham;
+                            echo '
+                         <div class="product">
+                        <span class="discount">Giảm 16%</span>
+                        <div class="img-product">
+                            <a href="'.$path_deltail.'"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
                         </div>
-                    </div>
+                        <div class="price-product">
+                            <s class="price-old">29,000,000<p>VNĐ</p></s>
 
-
-
-
-
-
-                    <!-- -------------------------------- -->
-
-
-
-
-
-
-
-
-                    <div class="title-container">
-                        <div class="line"></div>
-                        <h1 class="title-main">SẢN PHẨM NỔI BẬT</h1>
-                        <div class="line"></div>
-                    </div>
-
-                    <div class="product-container">
-                        <div class="row-product">
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
+                            <div class="price-new">' . $gia . '<p>VNĐ</p>
                             </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-
                         </div>
+                        <h4><a href="'.$path_deltail.'">' . $ten_sanpham . '</a></h4>
                     </div>
 
-
-
-                    <!-- --------------------------------- -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="title-container">
-                        <div class="line"></div>
-                        <h1 class="title-main">SẢN PHẨM NỔI BẬT</h1>
-                        <div class="line"></div>
+                        ';
+                        } ?>
                     </div>
+                </div>
+            </div>
 
-                    <div class="product-container">
-                        <div class="row-product">
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
+            <div class="macbook_pro">
+                <div class="title-container">
+                    <div class="line"></div>
+                    <h1 class="title-main">MACBOOK PRO</h1>
+                    <div class="line"></div>
+                </div>
 
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-
+                <div class="product-container">
+                    <div class="row-product">
+                        <?php foreach ($sp_macbook_pro as $macbook_pro) {
+                            extract($macbook_pro);
+                            $path_deltail = 'index.php?act=deltail&id=' . $id_sanpham;
+                            echo '
+                         <div class="product">
+                        <span class="discount">Giảm 16%</span>
+                        <div class="img-product">
+                            <a href="'.$path_deltail.'"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
                         </div>
-                    </div>
-                    <!-- -------------------------------- -->
+                        <div class="price-product">
+                            <s class="price-old">29,000,000<p>VNĐ</p></s>
 
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="title-container">
-                        <div class="line"></div>
-                        <h1 class="title-main">SẢN PHẨM NỔI BẬT</h1>
-                        <div class="line"></div>
-                    </div>
-
-                    <div class="product-container">
-                        <div class="row-product">
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
+                            <div class="price-new">' . $gia . '<p>VNĐ</p>
                             </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-
                         </div>
-                    </div>
-                    <!-- --------------------------------    -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="title-container">
-                        <div class="line"></div>
-                        <h1 class="title-main">SẢN PHẨM NỔI BẬT</h1>
-                        <div class="line"></div>
+                        <h4><a href="'.$path_deltail.'">' . $ten_sanpham . '</a></h4>
                     </div>
 
-                    <div class="product-container">
-                        <div class="row-product">
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
+                        ';
+                        } ?>
+                    </div>
+                </div>
+            </div>
 
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
+            <div class="imac">
+                <div class="title-container">
+                    <div class="line"></div>
+                    <h1 class="title-main">MAC DESKTOP</h1>
+                    <div class="line"></div>
+                </div>
 
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-                            <div class="product">
-                                <span class="discount">Giảm 15%</span>
-                                <div class="img-product">
-                                    <a href=""><img src="image/Macbook.jpeg" alt=""></a>
-                                </div>
-                                <div class="price-product">
-                                    <s class="price-old">26,000,000<p>VNĐ</p>
-                                    </s>
-
-                                    <div class="price-new">26,000,000
-                                        <p>VNĐ</p>
-                                    </div>
-                                </div>
-                                <h4><a href="">MacBook Air M2 2022 (8GB/256GB)</a></h4>
-                            </div>
-
+                <div class="product-container">
+                    <div class="row-product">
+                        <?php foreach ($sp_imac as $imac) {
+                            extract($imac);
+                            $path_deltail = 'index.php?act=deltail&id=' . $id_sanpham;
+                            echo '
+                         <div class="product">
+                        <span class="discount">Giảm 16%</span>
+                        <div class="img-product">
+                            <a href="'.$path_deltail.'"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
                         </div>
+                        <div class="price-product">
+                            <s class="price-old">29,000,000<p>VNĐ</p></s>
+
+                            <div class="price-new">' . $gia . '<p>VNĐ</p>
+                            </div>
+                        </div>
+                        <h4><a href="'.$path_deltail.'">' . $ten_sanpham . '</a></h4>
                     </div>
-                </section>
+
+                        ';
+                        } ?>
+                    </div>
+                </div>
+            </div>
 
 
-                <section class="benefit">
-                    <div class="row-benefit">
-                        <img src="image/icon_benefit_1.png" alt="">
-                        <div class="content-benefit">
-                            <h4>Mua hàng siêu tiết kiệm</h4>
-                            <p>Các sản phẩm luôn được bán với giá ưu đã nhất cho khách hàng</p>
-                        </div>
-                    </div>
-                    <div class="row-benefit">
-                        <img src="image/icon_benefit_2.png" alt="">
-                        <div class="content-benefit">
-                            <h4>Chất lượng tuyệt đối 100%</h4>
-                            <p>Cam kết sản phẩm chính hãng từ Châu Âu, Châu Mỹ ...</p>
-                        </div>
-                    </div>
-                    <div class="row-benefit">
-                        <img src="image/icon_benefit_3.png" alt="">
-                        <div class="content-benefit">
-
-                            <h4>Khuyến mại cực lớn</h4>
-                            <p>Được hưởng ưu đãi và các chương trình khuyến mại cực lớn</p>
-                        </div>
-                    </div>
-                    <div class="row-benefit">
-                        <img src="image/icon_benefit_4.png" alt="">
-                        <div class="content-benefit">
-                            <h4>Thanh toán dễ dàng</h4>
-                            <p>Phương thức thanh toán dễ dàng và cực kì tiện lợi</p>
-                        </div>
-                    </div>
-                </section>
-            </main>
         </section>
+    </main>
+</section>

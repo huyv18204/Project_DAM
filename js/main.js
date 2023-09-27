@@ -45,4 +45,3 @@ $('.img-deltail-nav').slick({
     focusOnSelect: true,
     arrows: false
 });
-

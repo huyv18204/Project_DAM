@@ -42,28 +42,32 @@
             <nav class="header-home-page">
                 <div class="container-header">
                     <div class="logo">
-                        <a href="">
+                        <a href="index.php?act=home">
                             <img src="image/JIn Store 1.png" alt="">
                         </a>
                     </div>
                     <div class="menu-nav">
                         <ul>
-                            <li><a class="hover-nav" href="">MACBOOK</a>
+                            <li><a class="hover-nav" href="index.php?act=category&id=1">MACBOOK AIR</a>
                                 <ul class="macbook-nav">
-                                    <li><a href="#">Macbook M1</a></li>
-                                    <li><a href="#">Macbook M2</a></li>
-                                    <li><a href="#">Macbook Air</a></li>
-                                    <li><a href="#">Macbook Pro</a></li>
+                                    <li><a href="#">Macbook Air M1</a></li>
+                                    <li><a href="#">Macbook Air M2</a></li>
                                 </ul>
                             </li>
-                            <li><a class="hover-nav" href="">IMAC</a>
+                            <li><a class="hover-nav" href="index.php?act=category&id=2">MACBOOK PRO</a>
+                                <ul class="diffirent-nav">
+                                    <li><a href="#">Macbook Pro M1</a></li>
+                                    <li><a href="#">Macbook Pro M2</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="hover-nav" href="index.php?act=category&id=3">IMAC</a>
                                 <ul class="imac-nav">
                                     <li><a href="#">iMac M1</a></li>
                                     <li><a href="#">Mac mini</a></li>
                                     <li><a href="#">Mac Studio</a></li>
                                 </ul>
                             </li>
-                            <li><a class="hover-nav" href="">IPHONE</a>
+                            <li><a class="hover-nav" href="index.php?act=category&id=4">IPHONE</a>
                                 <ul class="iphone-nav">
                                     <li><a href="#">iPhone 14 Series</a></li>
                                     <li><a href="#">iPhone 13 Series</a></li>
@@ -71,29 +75,29 @@
                                     <li><a href="#">iPhone 11 Series</a></li>
                                 </ul>
                             </li>
-                            <li><a class="hover-nav" href="">IPAD</a>
+                            <li><a class="hover-nav" href="index.php?act=category&id=5">IPAD</a>
                                 <ul class="ipad-nav">
                                     <li><a href="#">iPad Air</a></li>
                                     <li><a href="#">iPad Pro</a></li>
                                     <li><a href="#">iPad Mini</a></li>
                                 </ul>
                             </li>
-                            <li><a class="hover-nav" href="">APPLE WATCH</a>
+                            <li><a class="hover-nav" href="index.php?act=category&id=9">APPLE WATCH</a>
                                 <ul class="watch-nav">
                                     <li><a href="#">Apple Watch Ultra</a></li>
                                     <li><a href="#">Apple Watch Series 8</a></li>
                                     <li><a href="#">Apple Watch SE</a></li>
                                 </ul>
                             </li>
-                            <li><a class="hover-nav" href="">PHỤ KIỆN</a>
-                                <ul class="diffirent-nav">
-                                    <li><a href="#">Phụ Kiện Macbook</a></li>
-                                    <li><a href="#">Phụ Kiện Iphone</a></li>
-                                    <li><a href="#">Phụ Kiện iPad</a></li>
-                                    <li><a href="#">AirPods</a></li>
-                                    <li><a href="#">Phụ Kiện Khác</a></li>
-                                </ul>
-                            </li>
+<!--                            <li><a class="hover-nav" href="index.php?act=category&id=7">PHỤ KIỆN</a>-->
+<!--                                <ul class="diffirent-nav">-->
+<!--                                    <li><a href="#">Phụ Kiện Macbook</a></li>-->
+<!--                                    <li><a href="#">Phụ Kiện Iphone</a></li>-->
+<!--                                    <li><a href="#">Phụ Kiện iPad</a></li>-->
+<!--                                    <li><a href="#">AirPods</a></li>-->
+<!--                                    <li><a href="#">Phụ Kiện Khác</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
                         </ul>
                     </div>
                     <div class="search-form">
