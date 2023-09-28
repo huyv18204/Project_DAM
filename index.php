@@ -10,9 +10,22 @@ if (isset($_GET['act'])) {
                 $id = $_GET['id'];
                 $list_sp = select_one_sanpham($id);
                 extract($list_sp);
-                $list_samekind = select_sp_samekind($id,$id_danhmuc);
+                $list_samekind = select_sp_samekind($id, $id_danhmuc);
             }
             require_once 'views/deltail.php';
+            break;
+        case 'result_search':
+            if (isset($_POST['btn-search'])) {
+                $search_sp = $_POST['search_sp'];
+
+                if (search_sp($search_sp) == "") {
+                    setcookie("thongbao", "Không tìm thấy sản phẩm",time()+2);
+                } else {
+                    $list_sp = search_sp($search_sp);
+                }
+            }
+            $list_dm = select_all_danhmuc();
+            require_once 'views/resultsearch.php';
             break;
         case 'category':
             if (isset($_GET['id'])) {

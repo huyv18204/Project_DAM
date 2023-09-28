@@ -45,4 +45,11 @@ function select_all_danhmuc(){
     $list = pdo_query($sql);
     return $list;
 }
+function search_sp($value){
+    $sql = " SELECT * FROM sanpham WHERE ten_sanpham LIKE '%$value%'";
+    $list = pdo_query($sql);
+    return $list;
+}
+
+
 ?>

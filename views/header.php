@@ -101,11 +101,11 @@
                         </ul>
                     </div>
                     <div class="search-form">
-                        <form action="">
-                            <input class="input-search" placeholder="    Tìm kiếm sản phẩm ..." type="text">
+                        <form action="index.php?act=result_search" method="post" >
+                            <input name="search_sp" class="input-search" placeholder="    Tìm kiếm sản phẩm ..." type="text">
 
-                            <button class="btn-search" type="submit">
-                                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                            <button name="btn-search" class="btn-search" type="submit">
+                                <a href="index.php?act=result_search"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
                             </button>
                         </form>
                     </div>
