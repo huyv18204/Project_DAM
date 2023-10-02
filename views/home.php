@@ -34,7 +34,7 @@
                          <div class="product">
                         <span class="discount">Giảm 16%</span>
                         <div class="img-product">
-                            <a href="'.$path_deltail.'"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
+                            <a href="' . $path_deltail . '"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
                         </div>
                         <div class="price-product">
                             <s class="price-old">29,000,000<p>VNĐ</p></s>
@@ -42,7 +42,7 @@
                             <div class="price-new">' . $gia . '<p>VNĐ</p>
                             </div>
                         </div>
-                        <h4><a href="'.$path_deltail.'">' . $ten_sanpham . '</a></h4>
+                        <h4><a href="' . $path_deltail . '">' . $ten_sanpham . '</a></h4>
                     </div>
 
                         ';
@@ -67,7 +67,7 @@
                          <div class="product">
                         <span class="discount">Giảm 16%</span>
                         <div class="img-product">
-                            <a href="'.$path_deltail.'"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
+                            <a href="' . $path_deltail . '"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
                         </div>
                         <div class="price-product">
                             <s class="price-old">29,000,000<p>VNĐ</p></s>
@@ -75,7 +75,7 @@
                             <div class="price-new">' . $gia . '<p>VNĐ</p>
                             </div>
                         </div>
-                        <h4><a href="'.$path_deltail.'">' . $ten_sanpham . '</a></h4>
+                        <h4><a href="' . $path_deltail . '">' . $ten_sanpham . '</a></h4>
                     </div>
 
                         ';
@@ -100,7 +100,7 @@
                          <div class="product">
                         <span class="discount">Giảm 16%</span>
                         <div class="img-product">
-                            <a href="'.$path_deltail.'"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
+                            <a href="' . $path_deltail . '"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
                         </div>
                         <div class="price-product">
                             <s class="price-old">29,000,000<p>VNĐ</p></s>
@@ -108,7 +108,7 @@
                             <div class="price-new">' . $gia . '<p>VNĐ</p>
                             </div>
                         </div>
-                        <h4><a href="'.$path_deltail.'">' . $ten_sanpham . '</a></h4>
+                        <h4><a href="' . $path_deltail . '">' . $ten_sanpham . '</a></h4>
                     </div>
 
                         ';
@@ -133,7 +133,7 @@
                          <div class="product">
                         <span class="discount">Giảm 16%</span>
                         <div class="img-product">
-                            <a href="'.$path_deltail.'"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
+                            <a href="' . $path_deltail . '"><img src="uploads/' . $anh_sanpham . '" alt=""></a>
                         </div>
                         <div class="price-product">
                             <s class="price-old">29,000,000<p>VNĐ</p></s>
@@ -141,7 +141,7 @@
                             <div class="price-new">' . $gia . '<p>VNĐ</p>
                             </div>
                         </div>
-                        <h4><a href="'.$path_deltail.'">' . $ten_sanpham . '</a></h4>
+                        <h4><a href="' . $path_deltail . '">' . $ten_sanpham . '</a></h4>
                     </div>
 
                         ';
@@ -149,8 +149,6 @@
                     </div>
                 </div>
             </div>
-
-
         </section>
     </main>
 </section>

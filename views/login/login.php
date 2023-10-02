@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
-        crossorigin="anonymous" />
-</head>
-
-<body>
-    <!-- Form without bootstrap -->
     <div class="auth-wrapper">
         <div class="auth-container">
             <div class="auth-action-left">
@@ -31,20 +17,23 @@
                         </div>
                         <p class="auth-sgt">hoặc:</p>
                     </div>
-                    <form class="login-form">
-                        <input type="email" class="auth-form-input" placeholder="Tên tài khoản">
+                    <form class="login-form" method="post" action="">
+                        <input name="account" type="text" class="auth-form-input" placeholder="Tên tài khoản">
                         <div class="input-icon">
-                            <input type="password" class="auth-form-input" placeholder="Mật khẩu">
+                            <input name="password" type="password" class="auth-form-input" placeholder="Mật khẩu">
                             <i class="fa fa-eye show-password"></i>
                         </div>
+                        <div><span style="color: red"><?php if (isset($login_mess) && $login_mess != ""){
+                                echo $login_mess;
+                            } ?></span></div>
                         <label class="btn active">
                             <input type="checkbox" name='email1' checked>
                             <i class="fa fa-square-o"></i><i class="fa fa-check-square-o"></i>
                             <span> Lưu mật khẩu.</span>
                         </label>
                         <div class="footer-action">
-                            <input type="submit" value="Đăng nhập" class="auth-submit">
-                            <a href="register.html" class="auth-btn-direct">Đăng kí</a>
+                            <input name="btn-login" type="submit" value="Đăng nhập" class="auth-submit">
+                            <a href="index.php?act=register" class="auth-btn-direct">Đăng kí</a>
                         </div>
                     </form>
                     <div class="auth-forgot-password">
@@ -52,14 +41,5 @@
                     </div>
                 </div>
             </div>
-            <div class="auth-action-right">
-                <div class="auth-image">
-                    <img src="image/vector.jpg" alt="login">
-                </div>
-            </div>
         </div>
     </div>
-    <script src="js/common.js"></script>
-</body>
-
-</html>

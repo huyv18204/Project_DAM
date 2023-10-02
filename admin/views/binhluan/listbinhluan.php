@@ -10,27 +10,47 @@
         <div class="commodities-container">
             <div class="line-commodities"></div>
             <div class="table-commodities">
+                 <span style="color: #7AC142;" class="cookie-notify"><?php if (isset($_COOKIE["thong_bao"])) {
+                         $thong_bao = $_COOKIE["thong_bao"];
+                         echo "<p>$thong_bao</p>";
+                     }
+                     ?></span>
                 <table class="commodities">
                     <thead>
                     <tr>
                         <th width="10"><input type="checkbox"></th>
-                        <th>Hàng hoá</th>
-                        <th>Số BL</th>
-                        <th>Mới nhất</th>
-                        <th>Cũ nhất</th>
+                        <th>ID</th>
+                        <th>Nội dung</th>
+                        <th>Sản phẩm</th>
+                        <th>Người bình luận</th>
+                        <th>Ngày bình luận</th>
                         <th>Chức năng</th>
                     </tr>
                     </thead>
-                    <tbody class="product-list">
+                    <?php
+                    foreach ($list_comment as $comment) {
+                        extract($comment);
+                        $path_del = 'index.php?act=del-comment&id=' . $id;
+                        echo '
+
+                                            <tbody class="product-list">
                     <tr>
                         <td width="10"><input type="checkbox"></td>
-                        <td>Macbook Air M1</td>
-                        <td>10</td>
-                        <td>2021</td>
-                        <td>2022</td>
-                        <td><a class="deltail-comment" href="index.php?act=chi-tiet-bl">Chi tiết</a></td>
+                        <td>' . $id . '</td>
+                        <td>' . $content . '</td>
+                        <td>' . $ten_sanpham . '</td>
+                        <td>' . $name . '</td>
+                        <td>' . $date_comment . '</td>
+                        <td><button class="delete">
+                                <a href="' . $path_del . '"><i class="fas fa-trash-alt"></i></a>
+                       </button></td>
                     </tr>
                     </tbody>
+
+                        ';
+                    }
+                    ?>
+
                 </table>
                 <div id="pagination"></div>
             </div>

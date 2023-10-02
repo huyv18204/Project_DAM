@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $('.row-product').slick(
         {
@@ -26,7 +25,6 @@ $(document).ready(function () {
 });
 
 
-
 // ------------deltail----------
 
 $('.img-deltail-for').slick({
@@ -45,3 +43,4 @@ $('.img-deltail-nav').slick({
     focusOnSelect: true,
     arrows: false
 });
+

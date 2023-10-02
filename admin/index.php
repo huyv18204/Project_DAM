@@ -1,6 +1,8 @@
 <?php
 include '../model/admin/sanpham.php';
 include '../model/admin/danhmuc.php';
+include '../model/admin/khachhang.php';
+include '../model/comment.php';
 include '../model/model.php';
 include 'views/header.php';
 if (isset($_GET['act'])) {
@@ -43,9 +45,7 @@ if (isset($_GET['act'])) {
             break;
         case 'update-sp':
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                echo 'aa';
                 if (empty($_POST['name-product']) || empty($_POST['price'])) {
-
                 } else {
                     $id_category = $_POST['category'];
                     $name_product = $_POST['name-product'];
@@ -61,7 +61,7 @@ if (isset($_GET['act'])) {
 //                    echo "Sorry, there was an error uploading your file.";
                     }
 
-                    update_sanpham($name_product,$price,$image,$id_category,$decription,$id);
+                    update_sanpham($name_product, $price, $image, $id_category, $decription, $id);
                     setcookie("thong_bao", "Update thành công.", time() + 2);
                     header('location:index.php?act=list-sp');
                 }
@@ -124,13 +124,64 @@ if (isset($_GET['act'])) {
 
 //        ---------------------kh--------
         case 'list-kh':
+            $listkh = select_all_user();
             include 'views/khachhang/listkhachhang.php';
             break;
-        case 'add-kh' :
+        case 'add-kh':
+            if (isset($_POST['btn-add'])) {
+                $name = $_POST['name'];
+                $account = $_POST['account'];
+                $pass = $_POST['pass'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $address = $_POST['address'];
+                if ($_POST['role'] == 1) {
+                    $role = 1;
+                } else {
+                    $role = 0;
+                }
+                if (empty($email) || empty($account) || empty($pass)) {
+                    setcookie("thong_bao", "Vui lòng điền thông tin.", time() + 2);
+                } else {
+                    insert_user($name, $account, $pass, $email, $phone, $address, $role);
+                    setcookie("thong_bao", "Thêm khách hành thành công.", time() + 2);
+                    header('location:index.php?act=list-kh');
+                }
+
+            }
             include 'views/khachhang/addkhachhang.php';
             break;
         case 'edit-kh' :
+            if (isset($_GET['id'])) {
+                $list_user = select_one_user($_GET['id']);
+            }
             include 'views/khachhang/editkhachhang.php';
+            break;
+        case 'update-kh':
+            if (isset($_POST['btn-edit'])) {
+                $name = $_POST['name'];
+                $account = $_POST['account'];
+                $pass = $_POST['pass'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $address = $_POST['address'];
+                if ($_POST['role'] == 1) {
+                    $role = 1;
+                } else {
+                    $role = 0;
+                }
+                $id = $_POST['id'];
+                setcookie("thong_bao", "Cập nhật thành công.", time() + 2);
+                update_kh($name, $account, $pass, $email, $phone, $address, $role, $id);
+                header('location:index.php?act=list-kh');
+            }
+            break;
+        case 'del-kh':
+            if (isset($_GET['id'])) {
+                del_user($_GET['id']);
+                setcookie("thong_bao", "Xoá thành công.", time() + 2);
+            }
+            header("location:index.php?act=list-kh");
             break;
         case 'bieu-do':
             include 'views/thongke/bieudo.php';
@@ -139,10 +190,16 @@ if (isset($_GET['act'])) {
             include 'views/thongke/thongke.php';
             break;
         case 'list-bl' :
+            $list_comment = select_all_comment();
             include 'views/binhluan/listbinhluan.php';
             break;
-        case 'chi-tiet-bl' :
-            include 'views/binhluan/chitietbinhluan.php';
+
+        case 'del-comment':
+            if (isset($_GET['id'])) {
+                del_comment($_GET['id']);
+                setcookie("thong_bao", "Xoá thành công.", time() + 2);
+            }
+            header("location:index.php?act=list-bl");
             break;
     }
 } else {

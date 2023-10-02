@@ -1,12 +1,6 @@
 <div class="product-container-main">
 
     <div class="product-col-1">
-<!---->
-<!--        <div class="title-product">-->
-<!--            <div class="line-product"></div>-->
-<!--            <h1 class="title-product-main">--><?php //echo $sp_by_dm['ten_danhmuc']?><!--</h1>-->
-<!--            <div class="line-product"></div>-->
-<!--        </div>-->
         <div class="main-product">
             <div class="product-list">
                 <?php foreach ($list_sp as $sp_by_dm) {
@@ -28,8 +22,6 @@
                     </div>
 ';
     } ?>
-                   
-
             </div>
         </div>
     </div>
@@ -48,34 +40,6 @@
                 ';
                 }
                 ?>
-<!--                <li>-->
-<!--                    <img src="image/navbar_2.svg" alt="">-->
-<!--                    <a href="#">MACBOOK PRO</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <img src="image/navbar_3.svg" alt="">-->
-<!--                    <a href="#">IMAC & MAC DESKTOP</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <img src="image/navbar_4.svg" alt="">-->
-<!--                    <a href="#">iPHONE</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <img src="image/navbar_5.svg" alt="">-->
-<!--                    <a href="#">iPAD</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <img src="image/navbar_6.svg" alt="">-->
-<!--                    <a href="#">SẢN PHẨM KHÁC</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <img src="image/navbar_7.svg" alt="">-->
-<!--                    <a href="#">PHỤ KIỆN</a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <img src="image/navbar_8.svg" alt="">-->
-<!--                    <a href="#">GIẢM GIÁ SỐC</a>-->
-<!--                </li>-->
             </ul>
         </div>
     </div>

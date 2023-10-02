@@ -11,13 +11,6 @@
                         <!--                        <div class="img-deltail-content">-->
                         <!--                            <img src="image/deltail_1.jpeg" alt="">-->
                         <!--                        </div>-->
-                        <!--                        <div class="img-deltail-content">-->
-                        <!--                            <img src="image/deltail_3.png" alt="">-->
-                        <!--                        </div>-->
-                        <!--                        <div class="img-deltail-content">-->
-                        <!--                            <img src="image/deltail_2.png" alt="">-->
-                        <!--                        </div>-->
-
                     </div>
                     <div class="img-deltail-nav">
                         <div class="img-deltail-content">
@@ -25,12 +18,6 @@
                         </div>
                         <!--                        <div class="img-deltail-content">-->
                         <!--                            <img src="image/deltail_1.jpeg" alt="">-->
-                        <!--                        </div>-->
-                        <!--                        <div class="img-deltail-content">-->
-                        <!--                            <img src="image/deltail_3.png" alt="">-->
-                        <!--                        </div>-->
-                        <!--                        <div class="img-deltail-content">-->
-                        <!--                            <img src="image/deltail_2.png" alt="">-->
                         <!--                        </div>-->
                     </div>
                 </div>
@@ -105,67 +92,43 @@
                     
                                                 <div class="price-new">' . $gia . '<p>VNĐ</p>
                                                 </div>
-                                            </div>
-                                            <h4><a href="' . $path_deltail . '">' . $ten_sanpham . '</a></h4>
-                                        </div>
+                                   </div>
+                               <h4><a href="' . $path_deltail . '">' . $ten_sanpham . '</a></h4>
+                            </div>
                     
-                                            ';
+                            ';
                         } ?>
                     </div>
                 </div>
+        </div>
+        <div class="row-4-deltail">
+            <section>
+                <div class="title-container">
+                    <div class="line"></div>
+                    <h1 class="title-main">THÔNG TIN SẢN PHẨM</h1>
+                    <div class="line"></div>
+                </div>
+                <div class="decription">
+                    <div></div>
+                    <div>
+                        <p><?php echo $decription['mo_ta'] ?></p>
+                    </div>
+                    <div></div>
+                </div>
+            </section>
         </div>
         <div class="row-3-deltail">
             <div></div>
             <div>
                 <h4>Bình Luận</h4>
                 <div class="line-deltail"></div>
-                <div class="comment-container">
-                    <img src="image/User.png" alt="">
-                    <div class="comment-form">
-                        <form id="comment-form">
-                            <input id="comment" placeholder="    Nhập bình luận của bạn..." type="text">
-                        </form>
-                        <form id="btn-comment" action="">
-                            <button class="btn-comment" type="submit">Gửi</button>
-                        </form>
-                    </div>
-
-                </div>
-
-                <div class="list-comment">
-                    <h4>12 Comment</h4>
-                    <div class="line-deltail"></div>
-                    <div id="comment-section">
-                        <div class="comment">
-                            <div class="content-comment">
-                                <img src="image/User.png" alt="">
-                                <h4>Quốc Huy</h4>
-                            </div>
-                            <p>Material là mẫu quản trị được lấy cảm hứng từ phương pháp tiếp cận của Google đối
-                                với thiết kế giao diện người dùng.
-
-                                Material có 60 thành phần thủ công giúp bạn có mọi thứ bạn cần để tạo một trang
-                                quản trị website độc đáo và phù hợp cho website.
-
-                                Một số thành phần cơ bản bao gồm: Hiển thị chỉ số truyền thông xã hội, đồ thị và
-                                biểu đồ trong một loạt các định dạng, danh sách công việc và hộp kiểm, bảng và
-                                nhiều tùy chọn khác.
-
-                                Người hâm mộ Typography không nên thất vọng với các tùy chọn Font chữ từ
-                                Material. Họ Font chữ Roboto cổ điển được sử dụng làm kiểu chữ mặc định trong
-                                suốt mẫu quản trị Bootstrap này. Việc thêm các hộp thông báo vào thiết kế tùy
-                                chỉnh của bạn cũng được đề cập, nhờ vào việc lựa chọn các tùy chọn dựng sẵn.</p>
-                        </div>
-
-                        <div class="comment">
-                            <div class="content-comment">
-                                <img src="image/User.png" alt="">
-                                <h4>Huy Hoàng</h4>
-                            </div>
-                            <p>Material là mẫu quản trị được lấy cảm hứng từ phương pháp tiếp cận của Google đối
-                                với thiết kế giao diện người dùng.</p>
-                        </div>
-                    </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                        $("#comment").load("views/comment/comment.php", {idpro: <?php  echo $list_sp['id_sanpham']; ?>});
+                    });
+                </script>
+                <div id="comment">
 
                 </div>
             </div>

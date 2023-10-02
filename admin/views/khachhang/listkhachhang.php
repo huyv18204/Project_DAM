@@ -18,37 +18,57 @@
             <div class="line-commodities"></div>
             <div class="table-commodities">
                 <table class="commodities">
+                    <span class="cookie-notify"><?php if (isset($_COOKIE["thong_bao"])) {
+                            $thong_bao = $_COOKIE["thong_bao"];
+                            echo "<p>$thong_bao</p>";
+                        }
+                        ?></span>
                     <thead>
                     <tr>
                         <th width="10"><input type="checkbox"></th>
                         <th>Mã khách hàng</th>
                         <th>Họ và tên</th>
-                        <th>Hình ảnh</th>
+                        <th>Tên tài khoản</th>
                         <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Địa chỉ</th>
                         <th>Vai trò</th>
-                        <th>Trạng thái</th>
                         <th>Chức năng</th>
                     </tr>
                     </thead>
+                    <?php foreach ($listkh as $user) {
+                        extract($user);
+                        $path_edit = 'index.php?act=edit-kh&id=' . $id_user;
+                        $path_del = 'index.php?act=del-kh&id=' . $id_user;
+                        if ($role == 1) {
+                            $role_user = "Quản trị viên";
+                        } else {
+                            $role_user = "Khách hàng";
+                        }
+                        echo '
                     <tbody class="product-list">
                     <tr>
                         <td width="10"><input type="checkbox"></td>
-                        <td>71309005</td>
-                        <td>Vũ Quốc Huy</td>
-                        <td><img src="image/Macbook.jpeg" alt="" width="60px"></td>
-                        <td>vqh8124@gmail.com</td>
-                        <td>Quản trị viên</td>
-                        <td>Đã kích hoạt</td>
+                        <td>' . $id_user . '</td>
+                        <td>' . $name . '</td>
+                        <td>' . $account . '</td>
+                        <td>' . $email . '</td>
+                        <td>' . $phone . '</td>
+                        <td>' . $address . '</td>
+                        <td>' . $role_user . '</td>
                         <td>
                             <button class="delete">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                            <button class="edit">
-                                <a href="index.php?act=edit-kh"> <i class="fas fa-edit"></i></a>
-                            </button>
+                                <a href="' . $path_del . '"><i class="fas fa-trash-alt"></i></a>
+                       </button>
+                       <button class="edit">
+                                <a href="' . $path_edit . '"><i class="fas fa-edit"></i></a>
+                       </button>
                         </td>
                     </tr>
                     </tbody>
+                    ';
+                    } ?>
+
                 </table>
                 <div id="pagination"></div>
             </div>

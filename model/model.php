@@ -31,21 +31,6 @@ function pdo_execute($sql){
         unset($conn);
     }
 }
-
-//function pdo_execute($sql) {
-//    $sql_args = array_slice(func_get_args(), 1);
-//    try {
-//        $conn = pdo_get_connection();
-//        $stmt = $conn->prepare($sql);
-//        $stmt->execute($sql_args);
-//    } catch (PDOException $e) {
-//        // Log or display the error message for debugging.
-//        echo "SQL Error: " . $e->getMessage();
-//    } finally {
-//        unset($conn);
-//    }
-//}
-
 /**
  * Thực thi câu lệnh sql truy vấn dữ liệu (SELECT)
  * @param string $sql câu lệnh sql

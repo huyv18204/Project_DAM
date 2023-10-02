@@ -10,20 +10,20 @@
         <div class="notification"></div>
         <div class="table-commodities">
             <form action="index.php?act=update-dm" method="post">
-            <table class="commodities">
-                <tbody class="product-list">
-                <tr>
-                    <td>Tên danh mục</td>
-                    <td><input name="name-category" value="<?php echo $listdm['ten_danhmuc']?>" type="text"></td>
-                </tr>
-                </tbody>
+                <table class="commodities">
+                    <tbody class="product-list">
+                    <tr>
+                        <td>Tên danh mục</td>
+                        <td><input name="name-category" value="<?php echo $listdm['ten_danhmuc'] ?>" type="text"></td>
+                    </tr>
+                    </tbody>
 
-            </table>
-            <div class="add">
-                <input type="hidden" name="id" value="<?php echo $listdm['id_danhmuc']?>">
-                <button class="btn-list" type="submit"><a href="index.php?act=list-dm">Danh mục</a></button>
-                <button name="btn-edit" class="btn-add" type="submit">Sửa</button>
-            </div>
+                </table>
+                <div class="add">
+                    <input type="hidden" name="id" value="<?php echo $listdm['id_danhmuc'] ?>">
+                    <button class="btn-list" type="submit"><a href="index.php?act=list-dm">Danh mục</a></button>
+                    <button name="btn-edit" class="btn-add" type="submit">Sửa</button>
+                </div>
             </form>
         </div>
     </div>
