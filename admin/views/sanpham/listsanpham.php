@@ -30,8 +30,6 @@
                         <th>Mã sản phẩm</th>
                         <th>Tên sản phẩm</th>
                         <th>Ảnh</th>
-                        <th>Số lượng</th>
-                        <th>Tình trạng</th>
                         <th>Giá tiền</th>
                         <th>Danh mục</th>
                         <th>Chức năng</th>
@@ -49,8 +47,6 @@
                         <td>' . $id_sanpham . '</td>
                         <td>' . $ten_sanpham . '</td>
                         <td><img width="70px" src="../uploads/' . $anh_sanpham . '" alt=""></td>
-                        <td>40</td>
-                          <td><span class="status">Còn hàng</span></td>
                         <td>' . $gia . ' đ</td>
                         <td>' . $ten_danhmuc . '</td>
                         <td>

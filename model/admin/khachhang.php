@@ -1,7 +1,7 @@
 <?php
 function select_all_user()
 {
-    $sql = "select * from user";
+    $sql = "select * from user order by id_user desc ";
     $list = pdo_query($sql);
     return $list;
 }

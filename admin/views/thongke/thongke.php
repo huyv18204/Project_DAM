@@ -19,18 +19,24 @@
                         <th>Loại hàng</th>
                         <th>Số lượng</th>
                         <th>Giá cao nhất</th>
-                        <th>Giá thấp nhân</th>
+                        <th>Giá thấp nhất</th>
                         <th>Giá trung bình</th>
                     </tr>
                     </thead>
                     <tbody class="product-list">
+                    <?php foreach ($list_statistical as $value){
+
+                        extract($value);
+                        echo '
                     <tr>
-                        <td>Macbook</td>
-                        <td>31</td>
-                        <td>4.000.000</td>
-                        <td>8.000.000</td>
-                        <td>6.000.000</td>
+                        <td>'.$ten_danhmuc.'</td>
+                        <td>'.$count.'</td>
+                        <td>'.$max.'</td>
+                        <td>'.$min.'</td>
+                        <td>'.$avg.'</td>
                     </tr>
+                        ';
+                    }?>
 
                     </tbody>
                 </table>

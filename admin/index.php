@@ -1,7 +1,10 @@
 <?php
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 include '../model/admin/sanpham.php';
 include '../model/admin/danhmuc.php';
 include '../model/admin/khachhang.php';
+include '../model/admin/statistical.php';
 include '../model/comment.php';
 include '../model/model.php';
 include 'views/header.php';
@@ -184,9 +187,11 @@ if (isset($_GET['act'])) {
             header("location:index.php?act=list-kh");
             break;
         case 'bieu-do':
+            $list_statistical = select_statistical();
             include 'views/thongke/bieudo.php';
             break;
         case 'thong-ke' :
+            $list_statistical = select_statistical();
             include 'views/thongke/thongke.php';
             break;
         case 'list-bl' :

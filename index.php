@@ -1,4 +1,8 @@
 <?php
+ob_start();
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+
 session_start();
 require_once 'model/users/login.php';
 require_once 'model/model.php';
@@ -46,13 +50,14 @@ if (isset($_GET['act'])) {
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
                 $repass = $_POST['repass'];
-                if(empty($account) || empty($email) || empty($pass) || empty($repass)){
+                if (empty($account) || empty($email) || empty($pass) || empty($repass)) {
                     $notify = "Vui lòng điền thông tin";
-                }else{
-                    if ($pass == $repass){
+                } else {
+                    if ($pass == $repass) {
                         insert_account($account, $pass, $email);
                         $notify = "Đăng kí thành công";
-                    }else{
+                        header("location:index.php?act=login");
+                    } else {
                         $notify = "Mật khẩu không khớp";
                     }
                 }
@@ -60,17 +65,19 @@ if (isset($_GET['act'])) {
             require_once 'views/login/register.php';
             break;
         case 'login':
+
             if (isset($_POST['btn-login'])) {
                 $account = $_POST['account'];
                 $pass = $_POST['password'];
                 if (!empty($account) && !empty($pass)) {
                     $login = select_account($account, $pass);
-                    if(is_array($login)){
+                    if (is_array($login)) {
                         $_SESSION['account'] = $login;
-                        header("Location: $_SERVER[REQUEST_URI]");
+//                        header("Location: $_SERVER[REQUEST_URI]");
+                        header("location:index.php?act=home");
                         exit;
 
-                    }else{
+                    } else {
                         $notify = "Tài khoản không tồn tại";
                     }
                 }
@@ -80,14 +87,12 @@ if (isset($_GET['act'])) {
         case 'logout':
             if (isset($_SESSION['account'])) {
                 unset($_SESSION['account']);
-                header("Location: $_SERVER[REQUEST_URI]");
-                exit;
-
             }
-//            header("location: index.php");
+            header("Location: $_SERVER[REQUEST_URI]");
+            header("location:index.php?act=home");
             break;
         case 'update_information':
-            if(isset($_POST['btn-updateInfo'])){
+            if (isset($_POST['btn-updateInfo'])) {
                 $id_user = $_POST['id_user'];
                 $account = $_POST['account'];
                 $email = $_POST['email'];
@@ -98,34 +103,32 @@ if (isset($_GET['act'])) {
                 update_user($id_user, $pass, $name, $email, $phone, $address);
                 $_SESSION['account'] = select_account($account, $pass);
                 $notify = "Cập nhật thành công";
-                header("location:index.php?act=update_information");
 
             }
             require_once 'views/login/updateInformation.php';
             break;
         case 'forgot_pass':
-            if(isset($_POST['btn-submit'])){
+            if (isset($_POST['btn-submit'])) {
                 $account = $_POST['account'];
                 $email = $_POST['email'];
                 $check_Infor = check_inFor($account, $email);
-                if(is_array($check_Infor)){
-                    $notify = "Mật khẩu của bạn là: ". $check_Infor['pass'];
-                }else{
+                if (is_array($check_Infor)) {
+                    $notify = "Mật khẩu của bạn là: " . $check_Infor['pass'];
+                } else {
                     $notify = "Thông tin không chính xác";
                 }
             }
-                require_once 'views/login/forgotPass.php';
+            require_once 'views/login/forgotPass.php';
             break;
     }
+} else {
+    $list_sp = select_all_sp();
+    $sp_macbook_air = select_macbookair_sp();
+    $sp_macbook_pro = select_macbookpro_sp();
+    $sp_imac = select_imac_sp();
+    include 'views/home.php';
 }
-else {
-        $list_sp = select_all_sp();
-        $sp_macbook_air = select_macbookair_sp();
-        $sp_macbook_pro = select_macbookpro_sp();
-        $sp_imac = select_imac_sp();
-include 'views/home.php';
-    }
 
-    require_once 'views/footer.php';
+require_once 'views/footer.php';
 
-    ?>
+?>

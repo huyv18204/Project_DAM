@@ -2,7 +2,7 @@
 
 function select_all_sanpham()
 {
-    $sql = 'select id_sanpham, ten_sanpham, gia, anh_sanpham, mo_ta, luot_xem, sanpham.id_danhmuc,danhmuc.id_danhmuc, ten_danhmuc from sanpham inner join danhmuc on sanpham.id_danhmuc = danhmuc.id_danhmuc';
+    $sql = 'select id_sanpham, ten_sanpham, gia, anh_sanpham, mo_ta, luot_xem, sanpham.id_danhmuc,danhmuc.id_danhmuc, ten_danhmuc from sanpham inner join danhmuc on sanpham.id_danhmuc = danhmuc.id_danhmuc order by id_sanpham desc ';
     $list = pdo_query($sql);
     return $list;
 }

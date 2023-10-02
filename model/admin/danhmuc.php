@@ -13,7 +13,7 @@ function del_danhmuc($id_danhmuc)
 
 function select_all_danhmuc()
 {
-    $sql = 'select * from danhmuc';
+    $sql = 'select * from danhmuc order by id_danhmuc desc ';
     $list = pdo_query($sql);
     return $list;
 }

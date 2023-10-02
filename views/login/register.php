@@ -16,7 +16,7 @@
                     </div>
                     <p class="auth-sgt">hoặc:</p>
                 </div>
-                <form class="login-form" method="post" action="">
+                <form class="login-form" method="post" action="index.php?act=register">
                     <input name="account" type="text" class="auth-form-input" placeholder="Tên tài khoản">
                     <input name="email" type="email" class="auth-form-input" placeholder="Email">
                     <div class="input-icon">

@@ -1,4 +1,8 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+?>
     <div class="auth-wrapper">
         <div class="auth-container">
             <div class="auth-action-left">
@@ -17,7 +21,7 @@
                         </div>
                         <p class="auth-sgt">hoặc:</p>
                     </div>
-                    <form class="login-form" method="post" action="">
+                    <form class="login-form" method="post" action="index.php?act=login">
                         <input name="account" type="text" class="auth-form-input" placeholder="Tên tài khoản">
                         <div class="input-icon">
                             <input name="password" type="password" class="auth-form-input" placeholder="Mật khẩu">
