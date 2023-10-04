@@ -30,10 +30,6 @@
                         <td><input name="pass" value="" type="text"></td>
                     </tr>
                     <tr>
-                        <td>Hình ảnh</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
                         <td>Địa chỉ</td>
                         <td><input name="address" value="" type="text"></td>
                     </tr>
@@ -52,7 +48,7 @@
                             <div class="radio">
                                 <label for="">Khách hàng</label>
                                 <input name="role" type="radio" checked value="0">
-                                <label for="">Nhân viên</label>
+                                <label for="">Quản trị viên</label>
                                 <input name="role" type="radio" value="1">
                             </div>
                         </td>

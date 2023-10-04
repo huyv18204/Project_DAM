@@ -43,6 +43,11 @@
                     </tbody>
 
                 </table>
+                <span style=""
+                      class="cookie-notify"><?php if (isset($notify)) {
+                        echo $notify;
+                    }
+                    ?></span>
                 <div class="add">
                     <button class="btn-list" type="submit"><a href="index.php?act=list-sp">Danh sách sản phẩm</a>
                     </button>

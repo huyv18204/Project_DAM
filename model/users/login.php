@@ -27,5 +27,8 @@ function update_user($id_user, $pass, $name, $email, $phone, $address)
     $sql = "update user set pass = '$pass',name = '$name',email = '$email',phone = '$phone',address ='$address' where id_user = '$id_user'";
     pdo_execute($sql);
 }
-
+function change_pass($new_pass,$id_user){
+    $sql = "update user set pass = '$new_pass' where id_user = '$id_user'";
+    pdo_execute($sql);
+}
 ?>

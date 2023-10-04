@@ -17,7 +17,6 @@
                         <td><input name="name-category" value="<?php echo $listdm['ten_danhmuc'] ?>" type="text"></td>
                     </tr>
                     </tbody>
-
                 </table>
                 <div class="add">
                     <input type="hidden" name="id" value="<?php echo $listdm['id_danhmuc'] ?>">

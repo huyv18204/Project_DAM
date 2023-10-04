@@ -44,7 +44,7 @@
                                     <?php if($_SESSION['account']['role'] == 1){
                                         echo '<li><a href="admin/index.php?act=list-sp">Quản Lí Trang Web</a></li>';
                                     }?>
-                                    <li><a href="index.php?act=forgot_pass">Quên Mật Khẩu</a></li>
+                                    <li><a href="index.php?act=change_pass">Đổi Mật Khẩu</a></li>
                                     <li>
                                         <form action="index.php?act=home" method="post">
                                             <a name="btn-logout" href="index.php?act=logout">Đăng Xuất</a>

@@ -1,7 +1,7 @@
 <?php
 ob_start();
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 session_start();
 require_once 'model/users/login.php';
@@ -78,8 +78,10 @@ if (isset($_GET['act'])) {
                         exit;
 
                     } else {
-                        $notify = "Tài khoản không tồn tại";
+                        $notify = "Tài khoản hoặc mật khẩu không chính xác";
                     }
+                } else {
+                    $notify = "Không được bỏ trống thông tin";
                 }
             }
             require_once 'views/login/login.php';
@@ -120,13 +122,29 @@ if (isset($_GET['act'])) {
             }
             require_once 'views/login/forgotPass.php';
             break;
+        case 'change_pass':
+            if (isset($_POST['btn-submit'])) {
+                $account = $_POST['account'];
+                $pass = $_POST['pass'];
+                $new_pass = $_POST['new_pass'];
+                if ($pass == $_SESSION['account']['pass']) {
+                    change_pass($new_pass, $_SESSION['account']['id_user']);
+                    $_SESSION['account'] = select_account($account, $new_pass);
+                    $notify = "Cập nhật thành công";
+                } else {
+                    $notify = "Sai mật khẩu";
+                }
+            }
+            require_once 'views/login/changePass.php';
+            break;
+
     }
 } else {
-    $list_sp = select_all_sp();
-    $sp_macbook_air = select_macbookair_sp();
-    $sp_macbook_pro = select_macbookpro_sp();
-    $sp_imac = select_imac_sp();
-    include 'views/home.php';
+        $list_sp = select_all_sp();
+        $sp_macbook_air = select_macbookair_sp();
+        $sp_macbook_pro = select_macbookpro_sp();
+        $sp_imac = select_imac_sp();
+        include 'views/home.php';
 }
 
 require_once 'views/footer.php';

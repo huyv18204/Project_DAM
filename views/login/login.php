@@ -27,21 +27,23 @@ ini_set('display_errors', 1);
                             <input name="password" type="password" class="auth-form-input" placeholder="Mật khẩu">
                             <i class="fa fa-eye show-password"></i>
                         </div>
-                        <div><span style="color: red"><?php if (isset($login_mess) && $login_mess != ""){
-                                echo $login_mess;
-                            } ?></span></div>
                         <label class="btn active">
                             <input type="checkbox" name='email1' checked>
                             <i class="fa fa-square-o"></i><i class="fa fa-check-square-o"></i>
                             <span> Lưu mật khẩu.</span>
                         </label>
+                        <div class="notify inFor">
+                            <?php if (isset($notify)) {
+                                echo $notify;
+                            }
+                            ?></div>
                         <div class="footer-action">
                             <input name="btn-login" type="submit" value="Đăng nhập" class="auth-submit">
                             <a href="index.php?act=register" class="auth-btn-direct">Đăng kí</a>
                         </div>
                     </form>
                     <div class="auth-forgot-password">
-                        <a href="#">Quên mật khẩu</a>
+                        <a href="index.php?act=forgot_pass">Quên mật khẩu</a>
                     </div>
                 </div>
             </div>

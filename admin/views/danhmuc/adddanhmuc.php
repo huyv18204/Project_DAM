@@ -18,14 +18,16 @@
                     </tr>
                     </tbody>
                 </table>
+                <span style=";" class="cookie-notify"><?php if (isset($notify)) {
+                        echo "$notify";
+                    }
+                    ?></span>
                 <div class="add">
                     <button class="btn-list" type="submit"><a href="index.php?act=list-dm">Danh mục</a></button>
                     <button name="btn-add" class="btn-add" type="submit">Thêm</button>
                 </div>
             </form>
         </div>
-
-
     </div>
 </div>
 

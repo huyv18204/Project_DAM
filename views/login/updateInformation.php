@@ -11,7 +11,7 @@
                 <form class="login-form" method="post" action="">
                     <div class="inFor">
                         <div><lable>Tên Tài Khoản: </lable></div>
-                        <div class="inFor_input"><input name="account" type="text" class="form-updateInfo" value="<?=$account?>" placeholder=""></div>
+                        <div class="inFor_input"><input name="account" readonly type="text" class="form-updateInfo" value="<?=$account?>" placeholder=""></div>
                     </div>
                     <div class="inFor">
                         <div><lable>Họ Và Tên:</lable></div>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="inFor">
                         <div><lable>Mậu Khẩu:</lable></div>
-                        <div><input class="inFor_input" name="pass" type="password" class="form-updateInfo" value="<?=$pass?>" placeholder=""></div>
+                        <div><a href="index.php?act=change_pass"><input class="inFor_input" name="pass" type="password" class="form-updateInfo" value="<?=$pass?>" readonly placeholder=""></a></div>
                     </div>
                     <div class="inFor">
                         <div><lable>Địa Chỉ:</lable></div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 include '../model/admin/sanpham.php';
@@ -28,14 +29,16 @@ if (isset($_GET['act'])) {
                 if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
                     $image = $_FILES["img"]["name"];
                 } else {
-//                    echo "Sorry, there was an error uploading your file.";
+                    $notify = "Không thể upload file";
                 }
-
-                insert_sanpham($name_product, $price, $image, $id_category, $decription);
-                setcookie("thong_bao", "Thêm thành công.", time() + 2);
-                header('location:index.php?act=list-sp');
+                if(empty($name_product) || empty($price) || empty($id_category)){
+                    $notify = "Không được để trống thông tin";
+                }else{
+                    insert_sanpham($name_product, $price, $image, $id_category, $decription);
+                    $notify = "Không được để trống thông tin";
+                    header('location:index.php?act=list-sp');
+                }
             }
-
             $listdm = select_all_danhmuc();
             include 'views/sanpham/addsanpham.php';
             break;
@@ -88,6 +91,7 @@ if (isset($_GET['act'])) {
         case 'add-dm' :
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (empty($_POST['name-category'])) {
+                    $notify = "Không được bỏ trống tên danh mục";
                 } else {
                     $name_category = $_POST['name-category'];
                     insert_danhmuc($name_category);
@@ -105,16 +109,19 @@ if (isset($_GET['act'])) {
             include 'views/danhmuc/editdanhmuc.php';
             break;
         case 'update-dm':
-            if (isset($_POST['btn-edit'])) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (empty($_POST['name-category'])) {
-
+                    $notify = "Không được bỏ trống tên danh mục";
+                    header('location:index.php?act=edit-dm');
                 } else {
                     $name_category = $_POST['name-category'];
                     $id = $_POST['id'];
                     setcookie("thong_bao", "Cập nhật thành công.", time() + 2);
                     update_danhmuc($name_category, $id);
+                    header('location:index.php?act=list-dm');
                 }
-                header('location:index.php?act=list-dm');
+            }else{
+                echo "nhucc";
             }
             break;
         case 'del-dm':
