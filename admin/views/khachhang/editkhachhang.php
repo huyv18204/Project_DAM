@@ -15,27 +15,27 @@
                     <tbody class="product-list">
                     <tr>
                         <td>Họ và tên</td>
-                        <td><input name="name" value="  <?= $name ?>" type="text"></td>
+                        <td><input name="name" value="<?= $name ?>" type="text"></td>
                     </tr>
                     <tr>
                         <td>Tên tài khoản</td>
-                        <td><input name="account" value="  <?= $account ?>" type="text"></td>
+                        <td><input name="account" value="<?= $account ?>" type="text"></td>
                     </tr>
                     <tr>
                         <td>Mật khẩu</td>
-                        <td><input name="pass" value="  <?= $pass ?>" type="text"></td>
+                        <td><input name="pass" value="<?= $pass ?>" type="text"></td>
                     </tr>
                     <tr>
                         <td>Địa chỉ</td>
-                        <td><input name="address" value="  <?= $address ?>" type="text"></td>
+                        <td><input name="address" value="<?= $address ?>" type="text"></td>
                     </tr>
                     <tr>
                         <td>Số điện thoại</td>
-                        <td><input name="phone" value="  <?= $phone ?>" type="text"></td>
+                        <td><input name="phone" value="<?= $phone ?>" type="text"></td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td><input name="email" value="  <?= $email ?>" type="text"></td>
+                        <td><input name="email" value="<?= $email ?>" type="text"></td>
                     </tr>
                     <tr>
                         <td>Vai trò</td>

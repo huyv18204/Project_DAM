@@ -2,7 +2,7 @@
 
 function select_all_sp()
 {
-    $sql = "SELECT * FROM sanpham where 1 order by id_sanpham desc limit 0,8";
+    $sql = "SELECT * FROM sanpham where 1 order by luot_xem desc limit 0,8";
     $listsp = pdo_query($sql);
     return $listsp;
 }

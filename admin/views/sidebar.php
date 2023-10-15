@@ -34,8 +34,8 @@
         </ul>
     </div>
     <div class="logout-container">
-        <form action="">
-            <button class="logout" type="submit">Đăng Xuất</button>
+        <form action="" method="post">
+            <button class="logout" type="submit"><a href="index.php?act=logout">Đăng Xuất</a></button>
         </form>
     </div>
 </div>

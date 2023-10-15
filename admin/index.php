@@ -213,6 +213,13 @@ if (isset($_GET['act'])) {
             }
             header("location:index.php?act=list-bl");
             break;
+        case 'logout':
+            if (isset($_SESSION['account'])) {
+                unset($_SESSION['account']);
+            }
+            header("Location: $_SERVER[REQUEST_URI]");
+            header("location:../index.php?act=home");
+            break;
     }
 } else {
     include 'views/sanpham/listsanpham.php';
